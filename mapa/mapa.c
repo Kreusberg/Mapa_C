@@ -112,8 +112,28 @@ void listarReserva() {
 }
 
 void listarPessoasPorDia() {
-    printf("listarPessoasPorDia");
-    mostrarMenu();
+    int dia;
+    int sum;
+
+    printf("Digite o dia para verificar quantas pessoas estão reservadas: ");
+    scanf("%d", &dia);
+
+    while (dia < 1 || dia > 5) {
+        printf("Valor inválido! Por favor, tente novamente. \n");
+        printf("Digite o dia da reserva: \n");
+        scanf("%d", dia);
+    }
+
+
+    for (int i = 0; i < arrayIndex; i++) {
+        printf("sum = %d", sum);
+        sum += reservas[i].qtdPessoas;
+    }
+
+    printf("===============================");
+    printf("a soma da varáivel ~~ sum ~~ eh = %d", sum);
+    printf("===============================");
+
 }
 
 void sair() {
