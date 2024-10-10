@@ -49,3 +49,7 @@ requisito 1 = fazer reserva = pela metade
 requisito 2 = listar reserva =
 requisito 3 = total de pessoas por dia =
 requisito 4 = sair = feito
+
+TODO:
+tornar possível colocar nome com espaços na struct reserva
+por algum motivo cpf ainda está sendo tratado como int
