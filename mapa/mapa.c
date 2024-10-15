@@ -42,11 +42,15 @@ void fazerReserva() {
     int diaReserva;
     int qtdPessoas;
 
+    // Limpa o buffer antes de solicitar as informações ao usuário
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+    
     printf("Digite seu nome: \n");
-    scanf("%s", &nome);
+    fgets(nome, sizeof(nome), stdin);
 
     printf("Digite cpf nome: \n");
-    scanf("%s", &cpf);
+    fgets(cpf, sizeof(cpf), stdin);
 
     printf("Digite o dia da reserva: \n");
     scanf("%d", &diaReserva);
@@ -103,7 +107,7 @@ void fazerReserva() {
 void listarReserva() {
     for (int i = 0; i < arrayIndex; i++) {
         printf("\n");
-        printf("Nome: %s \n", reservas[i].nome);
+        printf("Nome: %s", reservas[i].nome);
         printf("CPF: %d \n", reservas[i].cpf);
         printf("Dia: %d \n", reservas[i].diaReserva);
         printf("Numero de Pessoas: %d \n", reservas[i].qtdPessoas);
@@ -113,7 +117,7 @@ void listarReserva() {
 
 void listarPessoasPorDia() {
     int dia;
-    int sum;
+    int sum = 0;
 
     printf("Digite o dia para verificar quantas pessoas estão reservadas: ");
     scanf("%d", &dia);
@@ -126,13 +130,13 @@ void listarPessoasPorDia() {
 
 
     for (int i = 0; i < arrayIndex; i++) {
-        printf("sum = %d", sum);
+        printf("sum = %d \n \n", sum);
         sum += reservas[i].qtdPessoas;
     }
 
-    printf("===============================");
+    printf("=============================== \n");
     printf("a soma da varáivel ~~ sum ~~ eh = %d", sum);
-    printf("===============================");
+    printf("=============================== \n");
 
 }
 
