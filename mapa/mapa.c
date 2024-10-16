@@ -46,27 +46,27 @@ void fazerReserva() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
     
-    printf("Digite seu nome: \n");
+    printf("Digite seu nome: ");
     fgets(nome, sizeof(nome), stdin);
 
-    printf("Digite cpf nome: \n");
+    printf("Digite cpf nome: ");
     fgets(cpf, sizeof(cpf), stdin);
 
-    printf("Digite o dia da reserva: \n");
+    printf("Digite o dia da reserva: ");
     scanf("%d", &diaReserva);
 
     while (diaReserva < 1 || diaReserva > 5) {
         printf("Valor inválido! Por favor, tente novamente. \n");
-        printf("Digite o dia da reserva: \n");
+        printf("Digite o dia da reserva: ");
         scanf("%d", &diaReserva);
     }
 
-    printf("Digite a quantidade de pessoas: \n");
+    printf("Digite a quantidade de pessoas: ");
     scanf("%d", &qtdPessoas);
 
     while (qtdPessoas < 1) {
         printf("Valor inválido! Por favor, tente novamente. \n");
-        printf("Digite a quantidade de pessoas: \n");
+        printf("Digite a quantidade de pessoas: ");
         scanf("%d", &qtdPessoas);
     }
 
@@ -129,7 +129,6 @@ void listarPessoasPorDia() {
         printf("Digite o dia da reserva: \n");
         scanf("%d", dia);
     }
-
 
     for (int i = 0; i < arrayIndex; i++) {
         printf("sum = %d \n \n", sum);
