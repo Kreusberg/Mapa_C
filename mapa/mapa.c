@@ -100,6 +100,7 @@ void fazerReserva() {
     
     printf("Reserva efetuada com sucesso!\n");
 
+    system("pause");
     mostrarMenu();
 
 }
@@ -111,7 +112,8 @@ void listarReserva() {
         printf("CPF: %d \n", reservas[i].cpf);
         printf("Dia: %d \n", reservas[i].diaReserva);
         printf("Numero de Pessoas: %d \n", reservas[i].qtdPessoas);
-        printf("===============================");
+        printf("===============================\n");
+        system("pause");
     }
 
     mostrarMenu();
@@ -136,8 +138,8 @@ void listarPessoasPorDia() {
     }
 
     printf("A quantidade de pessoas no dia %d é de %d \n", dia, sum);
-    
 
+    system("pause");    
     mostrarMenu();
 }
 
