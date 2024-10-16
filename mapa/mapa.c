@@ -113,6 +113,8 @@ void listarReserva() {
         printf("Numero de Pessoas: %d \n", reservas[i].qtdPessoas);
         printf("===============================");
     }
+
+    mostrarMenu();
 }
 
 void listarPessoasPorDia() {
@@ -134,10 +136,10 @@ void listarPessoasPorDia() {
         sum += reservas[i].qtdPessoas;
     }
 
-    printf("=============================== \n");
-    printf("a soma da varáivel ~~ sum ~~ eh = %d", sum);
-    printf("=============================== \n");
+    printf("A quantidade de pessoas no dia %d é de %d \n", dia, sum);
+    
 
+    mostrarMenu();
 }
 
 void sair() {
@@ -147,7 +149,7 @@ void sair() {
 void mostrarMenu() {
     int escolha;
     
-    printf("Bem-vindo(a) ao restaurante.");
+    printf("\n Bem-vindo(a) ao restaurante.");
     printf("\nPara seguirmos, escolha uma das opções abaixo: \n");
     
     printf("1 - Fazer Reserva. \n");
