@@ -12,7 +12,7 @@ void mostrarMenu();
 struct reserva 
 {
     char nome[50];
-    char cpf[11];
+    char cpf[12];
     int diaReserva;
     int qtdPessoas;
 };
@@ -41,7 +41,7 @@ void fazerReserva() {
 
     struct reserva reserva;
     char nome[50];
-    char cpf[11];
+    char cpf[12];
     int diaReserva;
     int qtdPessoas;
 
@@ -53,7 +53,7 @@ void fazerReserva() {
     fgets(nome, sizeof(nome), stdin);
 
     printf("Digite cpf nome: ");
-    scanf("%d", &cpf);
+    fgets(cpf, sizeof(cpf), stdin);
 
     printf("Digite o dia da reserva: ");
     scanf("%d", &diaReserva);
