@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 void fazerReserva();
 void listarReserva();
@@ -11,7 +12,7 @@ void mostrarMenu();
 struct reserva 
 {
     char nome[50];
-    char cpf[14];
+    char cpf[11];
     int diaReserva;
     int qtdPessoas;
 };
@@ -22,6 +23,9 @@ int arrayIndex = 0;
 
 
 int main() {
+
+    setlocale(LC_ALL, "Portuguese");
+
     int opcao = 0;
 
     do {
@@ -36,9 +40,8 @@ int main() {
 void fazerReserva() {
 
     struct reserva reserva;
-
     char nome[50];
-    char cpf[14];
+    char cpf[11];
     int diaReserva;
     int qtdPessoas;
 
@@ -50,7 +53,7 @@ void fazerReserva() {
     fgets(nome, sizeof(nome), stdin);
 
     printf("Digite cpf nome: ");
-    fgets(cpf, sizeof(cpf), stdin);
+    scanf("%d", &cpf);
 
     printf("Digite o dia da reserva: ");
     scanf("%d", &diaReserva);
@@ -74,7 +77,6 @@ void fazerReserva() {
     strcpy(reserva.cpf, cpf);
     reserva.diaReserva = diaReserva;
     reserva.qtdPessoas = qtdPessoas;
-
     reservas[arrayIndex] = reserva;
     arrayIndex++;
 
@@ -113,7 +115,6 @@ void listarReserva() {
         printf("Dia: %d \n", reservas[i].diaReserva);
         printf("Numero de Pessoas: %d \n", reservas[i].qtdPessoas);
         printf("===============================\n");
-        system("pause");
     }
 
     mostrarMenu();
@@ -176,6 +177,7 @@ void mostrarMenu() {
         break;
     default:
         printf("Opção inválida.");
+        mostrarMenu();
         break;
     }
 
