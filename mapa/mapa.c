@@ -111,7 +111,7 @@ void listarReserva() {
     for (int i = 0; i < arrayIndex; i++) {
         printf("\n");
         printf("Nome: %s", reservas[i].nome);
-        printf("CPF: %d \n", reservas[i].cpf);
+        printf("CPF: %s \n", reservas[i].cpf);
         printf("Dia: %d \n", reservas[i].diaReserva);
         printf("Numero de Pessoas: %d \n", reservas[i].qtdPessoas);
         printf("===============================\n");
