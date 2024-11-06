@@ -43,7 +43,7 @@ void fazerReserva() {
     char nome[50];
     char cpf[12];
     int diaReserva;
-    int qtdPessoas;
+    int qtdPessoas = 0;
 
     // Limpa o buffer antes de solicitar as informações ao usuário
     int c;
@@ -100,7 +100,7 @@ void fazerReserva() {
     //     printf("=========================================\n");
     // }
     
-    printf("Reserva efetuada com sucesso!\n");
+    printf("Reserva efetuada com sucesso!\n\n");
 
     system("pause");
     mostrarMenu();
@@ -151,14 +151,14 @@ void sair() {
 void mostrarMenu() {
     int escolha;
     
-    printf("\n Bem-vindo(a) ao restaurante.");
-    printf("\nPara seguirmos, escolha uma das opções abaixo: \n");
+    printf("\n Bem-vindo(a) ao restaurante.\n");
     
     printf("1 - Fazer Reserva. \n");
     printf("2 - Listar Reserva. \n");
     printf("3 - Total de Pessoas Por Dia. \n");
     printf("4 - Sair. \n");
 
+    printf("\nPara seguirmos, escolha uma das opções abaixo: \n");
     scanf("%d", &escolha);
 
     switch (escolha)
