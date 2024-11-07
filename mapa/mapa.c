@@ -90,26 +90,6 @@ void fazerReserva() {
     reserva.qtdPessoas = qtdPessoas;
     reservas[arrayIndex] = reserva;
     arrayIndex++;
-
-    // printf("=========================================\n");
-    // printf("reserva.nome = %s \n", reserva.nome);
-    // printf("reserva.cpf = %d \n", reserva.cpf);
-    // printf("reserva.diaReserva = %d \n", reserva.diaReserva);
-    // printf("reserva.qtdPessoas = %d \n", reserva.qtdPessoas);
-    // printf("=========================================\n");
-
-    // printf("=========================================\n");
-    // printf("reservas[0].nome = %s \n", reservas[0].nome);
-    // printf("reservas[0].cpf = %d \n", reservas[0].cpf);
-    // printf("reservas[0].diaReserva = %d \n", reservas[0].diaReserva);
-    // printf("reservas[0].qtdPessoas = %d \n", reservas[0].qtdPessoas);
-    // printf("=========================================\n");
-
-    // if (reservas[0].diaReserva == 1) {
-    //     printf("=========================================\n");
-    //     printf("reservas[0].diaReserva == 1 eh verdadeiro\n");
-    //     printf("=========================================\n");
-    // }
     
     printf("Reserva efetuada com sucesso!\n\n");
 
