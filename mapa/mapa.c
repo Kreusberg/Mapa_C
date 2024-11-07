@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <stdbool.h>
 
 void fazerReserva();
 void listarReserva();
@@ -44,6 +45,7 @@ void fazerReserva() {
     char cpf[12];
     int diaReserva;
     int qtdPessoas = 0;
+    bool validator = true;
 
     // Limpa o buffer antes de solicitar as informações ao usuário
     int c;
@@ -55,23 +57,32 @@ void fazerReserva() {
     printf("Digite cpf nome: ");
     fgets(cpf, sizeof(cpf), stdin);
 
-    printf("Digite o dia da reserva: ");
-    scanf("%d", &diaReserva);
-
-    while (diaReserva < 1 || diaReserva > 5) {
-        printf("Valor inválido! Por favor, tente novamente. \n");
+    while (validator) {
         printf("Digite o dia da reserva: ");
         scanf("%d", &diaReserva);
+
+        if (diaReserva < 1 || diaReserva > 5) {
+           printf("Valor inválido! Por favor, tente novamente. \n"); 
+        } else {
+            validator = false;
+        }
     }
 
-    printf("Digite a quantidade de pessoas: ");
-    scanf("%d", &qtdPessoas);
-
-    while (qtdPessoas < 1) {
-        printf("Valor inválido! Por favor, tente novamente. \n");
+    while (!validator) {
         printf("Digite a quantidade de pessoas: ");
         scanf("%d", &qtdPessoas);
+
+        if (qtdPessoas < 1) {
+           printf("Valor inválido! Por favor, tente novamente. \n"); 
+        } else {
+            validator = true;
+        }
     }
+
+    /*
+        a variável validator foi declarada como true para realizar a primeira validação (dia da reserva). Caso seja informado um valor correto, seu valor passa a ser false.
+        Logo, na segunda validação, fazemos a lógica ao contrário, reaproveitando a variável.
+    */
 
     strcpy(reserva.nome, nome);
     strcpy(reserva.cpf, cpf);
@@ -123,14 +134,20 @@ void listarReserva() {
 void listarPessoasPorDia() {
     int dia;
     int sum = 0;
+    bool validator = true;
 
     printf("Digite o dia para verificar quantas pessoas estão reservadas: ");
     scanf("%d", &dia);
 
-    while (dia < 1 || dia > 5) {
+    while (validator) {
         printf("Valor inválido! Por favor, tente novamente. \n");
-        printf("Digite o dia da reserva: \n");
         scanf("%d", dia);
+
+        if (dia < 1 || dia > 5) {
+            printf("Valor inválido! Por favor, tente novamente. \n");    
+        } else {
+            validator = false;
+        }
     }
 
     for (int i = 0; i < arrayIndex; i++) {
