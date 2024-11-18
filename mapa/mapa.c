@@ -91,6 +91,7 @@ void fazerReserva() {
     reservas[arrayIndex] = reserva;
     arrayIndex++;
     
+    
     printf("Reserva efetuada com sucesso!\n\n");
 
     system("pause");
@@ -116,23 +117,15 @@ void listarPessoasPorDia() {
     int sum = 0;
     bool validator = true;
 
-    printf("Digite o dia para verificar quantas pessoas estão reservadas: ");
-    scanf("%d", &dia);
-
     while (validator) {
-        printf("Valor inválido! Por favor, tente novamente. \n");
-        scanf("%d", dia);
+        printf("Digite o dia para verificar quantas pessoas estão reservadas: ");
+        scanf("%d", &dia);
 
         if (dia < 1 || dia > 5) {
             printf("Valor inválido! Por favor, tente novamente. \n");    
         } else {
             validator = false;
         }
-    }
-
-    for (int i = 0; i < arrayIndex; i++) {
-        printf("sum = %d \n \n", sum);
-        sum += reservas[i].qtdPessoas;
     }
 
     printf("A quantidade de pessoas no dia %d é de %d \n", dia, sum);
