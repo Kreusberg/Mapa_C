@@ -129,7 +129,11 @@ void listarPessoasPorDia() {
     }
 
     for (int i = 0; i < arrayIndex; i++) {
-        sum += reservas[i].qtdPessoas;
+        
+        if (reservas[i].diaReserva == dia) {
+            sum += reservas[i].qtdPessoas;
+        }
+        
     }
 
     printf("A quantidade de pessoas no dia %d é de %d \n", dia, sum);
