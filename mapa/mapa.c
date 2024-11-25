@@ -100,14 +100,20 @@ void fazerReserva() {
 }
 
 void listarReserva() {
-    for (int i = 0; i < arrayIndex; i++) {
-        printf("\n");
-        printf("Nome: %s", reservas[i].nome);
-        printf("CPF: %s \n", reservas[i].cpf);
-        printf("Dia: %d \n", reservas[i].diaReserva);
-        printf("Numero de Pessoas: %d \n", reservas[i].qtdPessoas);
-        printf("===============================\n");
+
+    if (arrayIndex == 0) {
+        printf("Não há reservas no momento \n");
+    } else {
+        for (int i = 0; i < arrayIndex; i++) {
+            printf("\n");
+            printf("Nome: %s", reservas[i].nome);
+            printf("CPF: %s \n", reservas[i].cpf);
+            printf("Dia: %d \n", reservas[i].diaReserva);
+            printf("Numero de Pessoas: %d \n", reservas[i].qtdPessoas);
+            printf("===============================\n");
+        }
     }
+
 
     mostrarMenu();
 }
